@@ -1,0 +1,64 @@
+Computer Knowledge Test
+
+1.The Operating System is a :
+
+*A. System Software
+B. Application Software
+C. Utility Software
+D. Malware
+
+2.Eight Bits make up a
+
+*A. byte
+B. megabyte
+C. kilobyte
+D. None
+
+3.Who was the father of computer?
+
+*Charles Babbage
+Dennis Ritchie
+Charles Babbage
+Ken Thompson
+
+4.What does CPU stand for ?
+
+Central Process Unit
+*Central Processing Unit
+Central Programming Unit
+Central Progressive Unit
+
+5.Who founded Apple Computer?
+*Steve Jobs
+Bill Gates
+Stephen Hawking
+Stephen Fry
+
+6.What does the Internet prefix WWW stand for?
+*World Wide Web
+Western Washington World
+Worldwide Weather
+Wide Width Wickets
+
+7.Which of these is not a computer brand?
+Lenovo
+*Lada
+Toshiba
+Apple
+
+8.Which of these products is not made by the Apple Corporation?
+*IMAX
+iMac
+iPod
+iPhone
+
+9.Along with whom did Bill Gates found Microsoft?
+Steve Jobs
+Elon Musk
+*Paul Allen
+Larry Page
+10.Which one of these applications is not a browser?
+Firefox
+*Web Explorer
+Chrome
+Safari
