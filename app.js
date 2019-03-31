@@ -78,13 +78,13 @@ function showAnswer(){
         handleScoreUpdate();
     }else{
         $("#submitButton").text("View Answers");
+        showTopFeedback();
     }
 }
 function checkChoice(){
    return $("input[name='answer']:checked").val()===STORE[questionNumber].answer;
 }
-//check the choice and provide appropiate feedback to the user on the screen
-function handleChoice(){
+function showTopFeedback(){
     let resultFeedback= $("#js-resultFeedback");
     if(checkChoice()){
         resultFeedback.text("Yay");
@@ -95,6 +95,10 @@ function handleChoice(){
         $("#js-resultFeedback").addClass("wrong");
     }
     resultFeedback.show();
+}
+//check the choice and provide appropiate feedback to the user on the screen
+function handleChoice(){
+    showTopFeedback();
     showAnswer();
 }
 //this handles the next question submit and the last question submit
