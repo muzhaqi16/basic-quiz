@@ -57,7 +57,7 @@ const STORE = [
 ];
 
 function handleScoreUpdate(){
-    if(questionNumber+1 < STORE.length-7){
+    if(questionNumber+1 < STORE.length){
         questionNumber++;
     }
 }
@@ -73,7 +73,7 @@ function showAnswer(){
         $("input[name='answer']:checked").parent().addClass('wrong');
         $("input[value='"+STORE[questionNumber].answer+"']").parent().addClass('correct');
     }
-    if(questionNumber+1<STORE.length-7){
+    if(questionNumber+1<STORE.length){
         $("#submitButton").text("Next Question");
         handleScoreUpdate();
     }else{
