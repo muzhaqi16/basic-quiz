@@ -61,6 +61,10 @@ function handleScoreUpdate(){
         questionNumber++;
     }
 }
+// this shows the answer for the question
+//depending if the user got it right or wrong
+//and display appropriate feedback by making the correct answers background 
+//green and the wrong one red
 function showAnswer(){
     $("#js-score").text("Correct " + score);
     if(checkChoice()){
@@ -79,6 +83,7 @@ function showAnswer(){
 function checkChoice(){
    return $("input[name='answer']:checked").val()===STORE[questionNumber].answer;
 }
+//check the choice and provide appropiate feedback to the user on the screen
 function handleChoice(){
     let resultFeedback= $("#js-resultFeedback");
     if(checkChoice()){
@@ -92,6 +97,7 @@ function handleChoice(){
     resultFeedback.show();
     showAnswer();
 }
+//this handles the next question submit and the last question submit
 function handleSubmit(event){
     event.preventDefault();
     if($("#submitButton").text()==="Next Question"){
@@ -116,7 +122,7 @@ function updateScore(){
 function renderQuestions(){
     updateScore();
     let choices = STORE[questionNumber].choices;
-
+    //for each aviable choice create a new element and append it to the submit form
     choices.forEach((question,index)=>{
         let item=`<label class="answerLabel"><input type="radio" value="${question}" name="answer" required>${question}</label>`;
         $("#questionsForm").append(item);
@@ -142,6 +148,7 @@ function handleStartButton(){
     });
 }
 
+//reset the question and score to the initial values
 function handleGameStart(){
     questionNumber=0;
     score=0;
