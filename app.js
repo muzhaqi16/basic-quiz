@@ -57,7 +57,7 @@ const STORE = [
 ];
 
 function handleScoreUpdate(){
-    if(questionNumber+1 < STORE.length){
+    if(questionNumber+1 < STORE.length-7){
         questionNumber++;
     }
 }
@@ -73,12 +73,11 @@ function showAnswer(){
         $("input[name='answer']:checked").parent().addClass('wrong');
         $("input[value='"+STORE[questionNumber].answer+"']").parent().addClass('correct');
     }
-    if(questionNumber+1<STORE.length){
+    if(questionNumber+1<STORE.length-7){
         $("#submitButton").text("Next Question");
         handleScoreUpdate();
     }else{
         $("#submitButton").text("View Answers");
-        showTopFeedback();
     }
 }
 function checkChoice(){
@@ -105,10 +104,10 @@ function handleChoice(){
 function handleSubmit(event){
     event.preventDefault();
     if($("#submitButton").text()==="Next Question"){
-        $("#js-resultFeedback").hide();
+        $("#js-resultFeedback").removeClass().hide();
         renderQuestions();
     }else if($("#submitButton").text()==="View Answers"){
-        $("#resultFeedback").text("Game Over");
+        $("#js-resultFeedback").text("Game Over");
         $("#question").html("<p>Correct - "+ score +" out of "+STORE.length+"<p>Want to play Again ? Click on the restart button</p>");
         $("#questionsForm").html('<button id="restartButton" type="button" autofocus>Restart</button>');
     }
@@ -156,6 +155,7 @@ function handleStartButton(){
 function handleGameStart(){
     questionNumber=0;
     score=0;
+    $("#js-resultFeedback").removeClass().text("").hide();
     $("#current-question").text(questionNumber +" out of "+ STORE.length);
     $("#js-score").text("Correct " + score);
 }
