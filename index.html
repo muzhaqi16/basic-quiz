@@ -13,22 +13,19 @@
         <header>
             <h1>Computer Science Quiz</h1>
         </header>
-        <nav>
-            <span id="current-question">4/10</span><span id="questionNr">4</span><span>Correct 2</span>
-        </nav>
-        <main>
-            <div class="question">
-                <span>Qestion 6</span>
-                <p>Which of the following answer is the best choice</p>
-            </div>
-            <div class="choices">
-                <form action="#">
-                    <label class="answerLabel"><input type="radio" value="Choice 1" name="answer" required>Choice 1</label>
-                    <label class="answerLabel"><input type="radio" value="Choice 2" name="answer" required>Choice 2</label>
-                    <label class="answerLabel"><input type="radio" value="Choice 3" name="answer" required>Choice 3</label>
-                    <label class="answerLabel"><input type="radio" value="Choice 4" name="answer" required>Choice 4</label>
-                    <button translate="submit">Submit</button>
-                </form>
+        <main role="main">
+            <nav>
+                <span id="current-question">0/10</span><span id="js-resultFeedback"></span><span id="js-score">Correct 0</span>
+            </nav>
+            <div class="quizArea">
+                <div class="question">
+                    <p id="question">Just click the start button to get going.</p>
+                </div>
+                <div class="choices">
+                    <button id="startButton" type="submit">Start</button>
+                    <form action="#" id="questionsForm">
+                    </form>
+                </div>
             </div>
         </main>
     </div>
