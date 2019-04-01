@@ -61,12 +61,14 @@ function handleScoreUpdate(){
         questionNumber++;
     }
 }
+
 // this shows the answer for the question
 //depending if the user got it right or wrong
 //and display appropriate feedback by making the correct answers background 
 //green and the wrong one red
 function showAnswer(){
     $("#js-score").text("Correct " + score);
+    $("#question").append("<p>Answer : " + STORE[questionNumber].answer+"</p>");
     if(checkChoice()){
         $("input[name='answer']:checked").parent().addClass('correct');
     }else{
@@ -109,7 +111,7 @@ function handleSubmit(event){
     }else if($("#submitButton").text()==="View Answers"){
         $("#js-resultFeedback").text("Game Over");
         $("#question").html("<p>Correct - "+ score +" out of "+STORE.length+"<p>Want to play Again ? Click on the restart button</p>");
-        $("#questionsForm").html('<button id="restartButton" type="button" autofocus>Restart</button>');
+        $(".choices").html('<button id="restartButton" type="button" autofocus>Restart</button>');
     }
     else{
         handleChoice();
@@ -119,7 +121,7 @@ function handleSubmit(event){
 function updateScore(){
     $("#current-question").text(questionNumber+1+" out of "+ STORE.length);
     $("#question").text(STORE[questionNumber].question);
-    $("#questionsForm").text("");
+    $(".choices").text("");
 } 
 
 function renderQuestions(){
@@ -128,10 +130,10 @@ function renderQuestions(){
     //for each aviable choice create a new element and append it to the submit form
     choices.forEach((question,index)=>{
         let item=`<label class="answerLabel"><input type="radio" value="${question}" name="answer" required>${question}</label>`;
-        $("#questionsForm").append(item);
+        $(".choices").append(item);
     });
 
-    $("#questionsForm").append('<button id="submitButton" type="submit">Submit</button>');
+    $(".choices").append('<button id="submitButton" type="submit">Submit</button>');
 }
 
 function handleGameRestartButton(){
