@@ -64,7 +64,7 @@ function handleScoreUpdate(){
 
 // this shows the answer for the question
 //depending if the user got it right or wrong
-//and display appropriate feedback by making the correct answers background 
+//and display appropriate feedback by making the correct answers background
 //green and the wrong one red
 function showAnswer(){
     $("#js-score").text("Correct " + score);
@@ -92,7 +92,7 @@ function showTopFeedback(){
         resultFeedback.addClass("correct");
         score++;
     }else{
-        $("#js-resultFeedback").text("Ops");
+        $("#js-resultFeedback").text("Oops");
         $("#js-resultFeedback").addClass("wrong");
     }
     resultFeedback.show();
@@ -122,7 +122,7 @@ function updateScore(){
     $("#current-question").text(questionNumber+1+" out of "+ STORE.length);
     $("#question").text(STORE[questionNumber].question);
     $(".choices").text("");
-} 
+}
 
 function renderQuestions(){
     updateScore();
